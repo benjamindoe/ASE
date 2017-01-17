@@ -1,0 +1,26 @@
+N=10
+t=2,4,6,8
+i = index/iterator
+have file, F
+make copy of F, G
+file F contains (x sub i, x sub i + t) sort by second components -- (x, x')
+file G contains (i, x sub i) sort by second components -- (y, y')
+file H contains (x sub i, x sub i + t) sort by first components --(z, z')
+F' and G' are output files
+if x' = z, output (x, z') to F' and incrememnt F and H
+if x' = y', output (y-t, x) to G' and incrememnt F and G
+if x' > y', increment G
+if x' > z, increment H
+when F eof, sort G' by second components and merge with G
+t = 2t
+F = F'
+G = G'
+
+repeat while t < N ==> F is empty
+sort G on first components
+
+
+
+
+
+(x sub N-1, x sub N) -- last record.
