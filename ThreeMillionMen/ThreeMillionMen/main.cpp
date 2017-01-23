@@ -118,7 +118,7 @@ void serial()
 			++fIt;
 			++hIt;
 		}
-		if (fIt != f.end() && gIt != g.end() && fIt->second == gIt->second)
+		else if (fIt != f.end() && gIt != g.end() && fIt->second == gIt->second)
 		{
 			gDash.push_back(std::make_pair(
 				(gIt->first - t),
@@ -128,13 +128,13 @@ void serial()
 			++gIt;
 
 		}
-		if (fIt != f.end() && gIt != g.end() && fIt->second > gIt->second)
-		{
-			++gIt;
-		}
-		if (fIt != f.end() && hIt != h.end() && fIt->second > hIt->first)
+		else if (fIt != f.end() && hIt != h.end() && fIt->second > hIt->first)
 		{
 			++hIt;
+		}
+		else if (fIt != f.end() && gIt != g.end() && fIt->second > gIt->second)
+		{
+			++gIt;
 		}
 		if(fIt == f.end() || fIt == --f.end())
 		{
